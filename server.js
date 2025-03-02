@@ -7,9 +7,9 @@ const bootcamps=require('./routes/bootcamp')
 dotenv.config({ path: './config.env' })
 const app = express();
 //Dev logging middelware
-if(process.env.NODE_ENV=='development')
+if(process.env.NODE_ENV==='development')
 {
-    app.unsubscribe(morgan('dev'));
+    app.use(morgan('dev'));
 }
 //Mount Routers
 app.use('/api/v1/bootcamps',bootcamps)
